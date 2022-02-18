@@ -3,9 +3,8 @@ package e2g9pack;
 public class e2g9Main {
 
     public static void main(String[] args) {
-        ServiceJuego objeto = new ServiceJuego();
-        objeto.llenarJuego();
-        objeto.ronda();
+        Juego nuevoJuego = new Juego();
+        nuevoJuego.jugar();
     }
 
 }
@@ -47,4 +46,4 @@ sino se moja, se pasa al siguiente jugador hasta que uno se moje. Si o si alguie
 tiene que mojar. Al final del juego, se debe mostrar que jugador se mojó.
 Pensar la lógica necesaria para realizar esto, usando los atributos de la clase Juego
 
-*/
+ */

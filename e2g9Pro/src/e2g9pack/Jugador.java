@@ -45,10 +45,7 @@ public class Jugador {
     public String toString() {
         return "\n{ " +"nombre: " + nombre + ", id: " + id +  ", mojado: " + mojado + " }";
     }
-
-    
-    
-    
+  
 }
 /*
 

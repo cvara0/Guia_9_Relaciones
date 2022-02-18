@@ -28,14 +28,7 @@ public class Revolver {
 
     public void setPosicionAgua(Byte posicionAgua) {
         this.posicionAgua = posicionAgua;
-    }
-
-    @Override
-    public String toString() {
-        return "Posiciones de revolver: \n{" + "Actual: " + posicionActual + ", Agua: " + posicionAgua + '}';
-    }
-    
-    
+    }   
 }
 /*
 

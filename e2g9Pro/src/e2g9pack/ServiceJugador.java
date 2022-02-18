@@ -3,12 +3,12 @@ package e2g9pack;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
-import java.util.TreeSet;
+
 
 public class ServiceJugador {
 
-    Scanner entrada = new Scanner(System.in, "ISO-8859-1").useDelimiter("\n").useLocale(Locale.US);
-    ServiceRevolver revolver = new ServiceRevolver();
+    private final Scanner entrada = new Scanner(System.in, "ISO-8859-1").useDelimiter("\n").useLocale(Locale.US);
+    private final ServiceRevolver revolver = new ServiceRevolver();
     //   
 
     public ArrayList<Jugador> cargarJugadoresYLlenarRevolver() {
@@ -27,17 +27,16 @@ public class ServiceJugador {
     //
 
     public void mostrarJugadores() {
-
         System.out.println(cargarJugadoresYLlenarRevolver());
-
     }
 
     //
     public boolean disparo() {
+        
         this.revolver.siguienteChorro();
+        System.out.print(this.revolver.toString());
         return this.revolver.mojar();
     }
-
 }
 
 /*

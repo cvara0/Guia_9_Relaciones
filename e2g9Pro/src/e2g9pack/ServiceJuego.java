@@ -7,7 +7,7 @@ public class ServiceJuego {
     private ServiceJugador partida;
     private ArrayList<Jugador> listaJugadores;
 
-    public void llenarJuego() {
+    public void nuevoJuego() {
         this.partida = new ServiceJugador();
         this.listaJugadores = partida.cargarJugadoresYLlenarRevolver();
 
@@ -21,19 +21,17 @@ public class ServiceJuego {
             System.out.println("\n----------------Ronda: " + (ronda++) + "----------------");
             for (Jugador i : this.listaJugadores) {
                 i.setMojado(partida.disparo());
-                System.out.println(i);
+                
+                System.out.println(i+"\n");
+                
                 if (i.getMojado()) {
-                    //System.out.println(i);
                     balazo = i.getMojado();
                     break;
                 }
-
             }
         } while (!balazo);
-        System.out.println("");
-
+        System.out.print("︻╦╤─ ҉ \n\n̿̿");
     }
-
 }
 /*
 Métodos:
