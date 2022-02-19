@@ -20,7 +20,6 @@ public class ServiceRevolver {
         } else {
             this.revolverCargado.setPosicionActual((byte) 1);
         }
-        
     }
 
     @Override

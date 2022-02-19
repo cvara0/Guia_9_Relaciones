@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
 
-
 public class ServiceJugador {
 
     private final Scanner entrada = new Scanner(System.in, "ISO-8859-1").useDelimiter("\n").useLocale(Locale.US);
@@ -32,7 +31,7 @@ public class ServiceJugador {
 
     //
     public boolean disparo() {
-        
+
         this.revolver.siguienteChorro();
         System.out.print(this.revolver.toString());
         return this.revolver.mojar();
