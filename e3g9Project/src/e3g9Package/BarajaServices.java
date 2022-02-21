@@ -34,7 +34,6 @@ public class BarajaServices {
         return (this.mazo.getNuevaBaraja().subList((this.posicionActual - 1), (this.posicionActual))/*.toString*/);
     }
 //
-
     public void cartasDisponibles() {
         System.out.println("Cartas disponibles: " + (40 - this.posicionActual));
     }
@@ -52,7 +51,7 @@ public class BarajaServices {
     }
     //
     public void cartasMonton() {
-        if (this.salidas.size() == 0) {
+        if (this.salidas.isEmpty()) {
             System.out.println("Aun no ha salido ninguna carta");
         } else {
             for (Carta i : this.salidas) {
