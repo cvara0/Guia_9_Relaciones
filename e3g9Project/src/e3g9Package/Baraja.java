@@ -1,7 +1,6 @@
 package e3g9Package;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 
 public class Baraja {
 
@@ -31,10 +30,7 @@ public class Baraja {
                 this.nuevaBaraja.add(new Carta(i, 'c'));
             }
         }
-        //System.out.println(this.nuevaBaraja);
-
     }
-
 }
 /*
   Realizar una baraja de cartas españolas orientada a objetos. Una carta tiene un número

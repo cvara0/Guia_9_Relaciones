@@ -1,25 +1,17 @@
 
 package e3g9Package;
 
+import java.util.Locale;
+import java.util.Scanner;
+
 
 public class e3g9Main {
 
     
     public static void main(String[] args) {
-        Baraja objeto=new Baraja();
-        BarajaServices objeto2=new BarajaServices();
-        objeto.crearBarajaEspaniola();
-        
-        objeto2.nuevaBaraja();
-        objeto2.barajar();
-        objeto2.siguienteCarta();
-        objeto2.cartasDisponibles();
-        objeto2.darCartas();
-        objeto2.cartasDisponibles();
-        objeto2.cartasMonton();
-        objeto2.mostrarBaraja();
+        BarajaServices objeto=new BarajaServices();
+        objeto.menu();   
     }
-    
 }
 
 /*
