@@ -9,10 +9,8 @@ public class e4ExG9Main {
     public static void main(String[] args) {
        Simulador objeto=new Simulador();
        
-       for(Alumno i:objeto.crearListaAlumnos(10)){
-           System.out.println(i);   
-       }
        
+       objeto.imprimirListaAlumnos(objeto.crearListaAlumnos(8));
     }
     
 }
