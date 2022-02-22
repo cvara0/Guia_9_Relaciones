@@ -27,6 +27,8 @@ public class Simulador {
         ArrayList<String> apellidos = new ArrayList<>(Arrays.asList("Pérez", "Sanchez", "Sandoval", "Toledo", "Vallejos", "Salinas", "Salazar", "Pedrozo", "Ojeda", "Rojas", "Cáceres", "Oviedo", "Rodriguez", "Gonzales", "Gomez", "García", "Cardozo", "Andrade", "Ayala", "Sotelo", "Carvallo", "Benitez", "Santiago", "Aquino", "Villalba", "Silva", "Maciel", "Escobar", "Sosa", "Diaz", "Dominguez", "Olivera", "Barbosa"));
         ArrayList<String> nombresCompletos = new ArrayList<>();
         byte i = 0;
+        
+        
         /*System.out.println("nombresF "+nombresF.size());
         System.out.println("nombresM "+nombresM.size());
         System.out.println("segundosNombresF "+segundosNombresF.size());

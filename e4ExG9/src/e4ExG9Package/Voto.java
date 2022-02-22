@@ -2,7 +2,7 @@ package e4ExG9Package;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
+
 import java.util.HashSet;
 
 public class Voto {
@@ -36,6 +36,7 @@ public class Voto {
     public void setAlumnosQueVoto(ArrayList<Alumno> alumnosQueVoto) {
         this.alumnosVotados = alumnosQueVoto;
     }
+
     //
     /*Crearemos un método votación en la clase Simulador que, recibe el listado de
       alumnos y para cada alumno genera tres votos de manera aleatoria. En este método
@@ -44,23 +45,40 @@ public class Voto {
       clase Alumno.
       Tener en cuenta que un alumno no puede votarse a sí mismo o votar más de una vez
       al mismo alumno. Utilizar un hashset para resolver esto.*/
-    public void votacion(ArrayList <Alumno> listaAlumnos){
-        HashMap<Alumno,HashSet<Alumno>> VotanteY3VotadosMap=new HashMap<>();
-        for(Alumno i:listaAlumnos){
-            Collections.shuffle(listaAlumnos);
-            this.alumnoQueVota=i;
-            for (int j = 0; j < 3; j++) {
-                listaAlumnos.subList(j, j+1);
-            }
+    public void votacion(ArrayList<Alumno> listaAlumnosVotantes) {
+        HashSet<HashSet<Alumno>> VotanteY3VotadosMap = new HashSet<>();
+        ArrayList<Alumno> listaAlumnosAVotar = (ArrayList) listaAlumnosVotantes.clone();
+
+        ArrayList<Alumno> tresAlumnos = new ArrayList<>();
+        ArrayList<ArrayList<Alumno>> listaDeATres = new ArrayList<>();
+      
+        for (Alumno j : listaAlumnosVotantes) {
+                Collections.shuffle(listaAlumnosAVotar);
+                int k = 0;
+                for (Alumno i : listaAlumnosAVotar) {
+                    if (!i.equals(j)) {
+                        i.setNroDeVotos(1);
+                        tresAlumnos.add(i);
+                        k++;
+                    }
+                    if (k == 3) {
+                        break;
+                    }
+                }
+                    listaDeATres.add((ArrayList<Alumno>) tresAlumnos.clone());
+                    System.out.println(j);
+                    System.out.println(tresAlumnos);
+                    tresAlumnos.clear();
+                  
             
-            
-            
+
         }
+        //System.out.println(listaDeATres);
+
     }
-    
-            
-            
-    /*Una vez hecho esto debemos generar una clase Voto, esta clase tendrá como
+}
+
+/*Una vez hecho esto debemos generar una clase Voto, esta clase tendrá como
 atributos, un objeto Alumno que será el alumno que vota y una lista de los alumnos a
 los que votó.
 • Crearemos un método votación en la clase Simulador que, recibe el listado de

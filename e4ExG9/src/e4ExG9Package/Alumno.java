@@ -39,7 +39,7 @@ public class Alumno {
 
     @Override
     public String toString() {
-        return "Nombre: " + nombreCompleto + ", DNI:" + dni + ", Votos: " + nroDeVotos;
+        return "\nNombre: " + nombreCompleto + ", DNI:" + dni + ", Votos: " + nroDeVotos;
     }
     
      
