@@ -8,9 +8,12 @@ public class e4ExG9Main {
     
     public static void main(String[] args) {
        Simulador objeto=new Simulador();
+       Voto objeto2=new Voto();
+ 
+       ArrayList<Alumno>listaAlumnos=objeto.crearListaAlumnos(8);
        
-       
-       objeto.imprimirListaAlumnos(objeto.crearListaAlumnos(8));
+       objeto.imprimirListaAlumnos(listaAlumnos);
+       objeto2.votacion(listaAlumnos);
     }
     
 }
