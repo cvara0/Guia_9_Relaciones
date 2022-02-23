@@ -10,10 +10,10 @@ public class e4ExG9Main {
        Simulador objeto=new Simulador();
        Voto objeto2=new Voto();
  
-       ArrayList<Alumno>listaAlumnos=objeto.crearListaAlumnos(5);
+       ArrayList<Alumno>listaAlumnos=objeto.crearListaAlumnos(6);
        
        //objeto.imprimirListaAlumnos(listaAlumnos);
-       objeto2.votacion(listaAlumnos);
+        System.out.println(objeto2.votacion(listaAlumnos));
     }
     
 }
