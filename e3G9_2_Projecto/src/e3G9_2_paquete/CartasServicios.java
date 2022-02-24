@@ -23,7 +23,8 @@ public class CartasServicios {//PREGUNTAR
     }
     //
     public static void crearBarajaEspaniola() {
-        cartasSacadas.clear();
+        CartasServicios.cartasSacadas.clear();
+        CartasServicios.barajaEspaniola.clear();
         for (byte i = 0; i < 13; i++) {
             if (i > 0 && i < 8 || i > 9 && i < 13) {
                 CartasServicios.barajaEspaniola.add(new Carta(i, 'c'));

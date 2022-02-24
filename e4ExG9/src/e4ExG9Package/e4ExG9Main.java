@@ -13,7 +13,8 @@ public class e4ExG9Main {
        ArrayList<Alumno>listaAlumnos=objeto.crearListaAlumnos(6);
        
        //objeto.imprimirListaAlumnos(listaAlumnos);
-        System.out.println(objeto2.votacion(listaAlumnos));
+        //System.out.println(objeto2.votanteY3Votados(listaAlumnos).toString().replace("=", "\n"));
+        objeto2.alumnosVotosRecividosYQuienesVotaronPorEllos(objeto2.votanteY3Votados(listaAlumnos));
     }
     
 }
