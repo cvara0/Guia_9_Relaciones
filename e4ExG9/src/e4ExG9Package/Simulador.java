@@ -10,7 +10,7 @@ import java.util.Scanner;
 import java.util.Spliterator;
 
 public class Simulador {
-
+private final Scanner entrada = new Scanner(System.in, "ISO-8859-1").useDelimiter("\n").useLocale(Locale.US);
     /*
     La clase Simulador debe tener un método que genere un listado de alumnos de manera
     aleatoria y lo retorne. 
@@ -20,6 +20,8 @@ public class Simulador {
     
      */
     public ArrayList<String> generarListadoNombreApellidoAleatorio(Integer cantidad) {
+        
+        
         ArrayList<String> nombresF = new ArrayList<>(Arrays.asList("Ana", "Noelia", "Yenifer", "Adriana", "Sofía", "Mariana", "Miriam", "Rosa", "María", "Florencia", "Beatriz", "Raquel", "Pamela", "Carolina", "Fernanda", "Laura", "Carla", "Diana"));
         ArrayList<String> nombresM = new ArrayList<>(Arrays.asList("Mario", "Alejandro", "Daniel", "Eduardo", "Ricardo", "Federico", "Andres", "Franciso", "Hector", "Mauricio", "Alberto", "Aaron", "Juan", "Dylan", "Brian", "Alfredo", "Sebastián", "Maximiliano"));
         ArrayList<String> segundosNombresF = new ArrayList<>(Arrays.asList("Victoria", "Patricia", "Estefania", "Erica", "Jacinta", "Ramona", "Andrea", "Liliana", "Yanina", "Mirta", "Lorena", "Mara"));
@@ -86,16 +88,19 @@ public class Simulador {
             listaAlumnos.add(new Alumno(listaDeNombres.subList(i, i + 1).toString().replace("[", "").replaceAll("\\[|\\]", ""), listaDeDnis.subList(i, i + 1).toString().replaceAll("\\[|\\]", " "), 0));
             i++;
         }
+        System.out.println("Lista de alumnos creada");
         return listaAlumnos;
     }
 
     public void imprimirListaAlumnos(ArrayList<Alumno> listaAlumnos) {
-        if (listaAlumnos.isEmpty()) {
-            System.out.println("Cree una lista de alumnos para mostrarla");
-        } else {
+       // if (listaAlumnos.isEmpty()) {
+        //    System.out.println("Cree una lista de alumnos para mostrarla");
+        //} else {
+            System.out.println("------------------------------------------------------------");
+                        System.out.println("----------Lista de estudiantes completa----------");
             for (Alumno i : listaAlumnos) {
                 System.out.println(i);
             }
-        }
+       // }
     }
 }

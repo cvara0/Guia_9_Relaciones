@@ -1,22 +1,109 @@
-
 package e4ExG9Package;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Scanner;
 
 public class e4ExG9Main {
 
-    
     public static void main(String[] args) {
-       Simulador objeto=new Simulador();
-       Voto objeto2=new Voto();
- 
-       ArrayList<Alumno>listaAlumnos=objeto.crearListaAlumnos(6);
-       
-       //objeto.imprimirListaAlumnos(listaAlumnos);
+        Scanner entrada = new Scanner(System.in, "ISO-8859-1").useDelimiter("\n").useLocale(Locale.US);
+        ArrayList<Alumno> nuevaListaAlumnos = new ArrayList<>();
+        HashMap<Alumno, ArrayList<Alumno>> nuevoVotanteY3Votados = new HashMap<>();
+        Simulador objetoSimulador = new Simulador();
+        Voto objetoVoto = new Voto();
+
+        //objeto.imprimirListaAlumnos(listaAlumnos);
         //System.out.println(objeto2.votanteY3Votados(listaAlumnos).toString().replace("=", "\n"));
-        objeto2.alumnosVotosRecividosYQuienesVotaronPorEllos(objeto2.votanteY3Votados(listaAlumnos));
+        //objetoVoto.conteoDeVotos(objetoVoto.votanteY3Votados(nuevaListaAlumnos));
+        byte opcion;
+        boolean creada = false;
+        do {
+            System.out.println("");
+            System.out.println("1. Generar lista de estudiantes");
+            System.out.println("2. Mostrar lista de estudiantes");
+            System.out.println("3. Mostrar cada estudiante y sus 3 votad@s");
+            System.out.println("4. Mostrar cada estudiante votad@ la cantidad de votos recibidos");
+            System.out.println("5. Mostrar estudiantes votad@s y quienes votaron por ell@os");
+            System.out.println("6. Mostrar recuento de votos(cantidad de votos emitidos)");
+            System.out.println("7. Mostrar 5 facilitadores y 5 facilitadores suplentes");
+            System.out.println("\n8. Salir");
+            System.out.print("\nOpción: ");
+            opcion = entrada.nextByte();
+            System.out.println();
+            switch (opcion) {
+                case 1:
+
+                    System.out.println("Ingrese cantidad de estudiantes (entre 15 y 30): ");
+                    Integer cantidad;
+                    do {
+                        cantidad = entrada.nextInt();
+                        if (cantidad < 15 || cantidad > 35) {
+                            System.out.print("Error. Ingrese cantidad entre 15 y 30: ");
+                            continue;
+                        }
+                        nuevaListaAlumnos = objetoSimulador.crearListaAlumnos(cantidad);
+                        objetoVoto.votanteY3Votados(nuevaListaAlumnos);
+                        objetoVoto.conteoDeVotos();
+
+                    } while (cantidad < 15 || cantidad > 35);
+
+                    creada = true;
+
+                    break;
+                case 2:
+                    if (creada) {
+                        objetoSimulador.imprimirListaAlumnos(nuevaListaAlumnos);
+                    } else {
+                        System.out.println("Error. Genere una nueva lsita para comenzar\n");
+                    }
+                    break;
+                case 3:
+                    if (creada) {
+                        objetoVoto.mostrarVotanteYSus3Votados();
+                    } else {
+                        System.out.println("Error. Genere una nueva lsita para comenzar\n");
+                    }
+                    break;
+                case 4:
+                    if (creada) {
+                        objetoVoto.mostrarAlumnosYCantidadDeVotosRecibidos();
+                    } else {
+                        System.out.println("Error. Genere una nueva lsita para comenzar\n");
+                    }
+                    break;
+                case 5:
+                    if (creada) {
+                        objetoVoto.mostrarAlumnoYQuienesVotaronPorEl();
+                    } else {
+                        System.out.println("Error. Genere una nueva lsita para comenzar\n");
+                    }
+                    break;
+                case 6:
+                    if (creada) {
+                       objetoVoto.mostrarCantidadDeVotosTotal();
+                    } else {
+                        System.out.println("Error. Genere una nueva lsita para comenzar\n");
+                    }
+                    break;
+                case 7:
+                    if (creada) {
+                      objetoVoto.mostrar5FacilitadoresYSuplentes();
+                    } else {
+                        System.out.println("Error. Genere una nueva lsita para comenzar\n");
+                    }
+                    break;
+                case 8:
+                    System.out.println("Fin\n");
+                    break;
+                default:
+                    System.out.println("Error, ingreso incorrecto\n");
+            }
+        } while (opcion != 8);
+
     }
-    
 }
 /*Desarrollar un simulador del sistema de votación de facilitadores en Egg 
 

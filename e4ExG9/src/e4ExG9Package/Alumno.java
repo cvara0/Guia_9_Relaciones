@@ -2,7 +2,7 @@
 package e4ExG9Package;
 
 
-public class Alumno {
+public class Alumno implements Comparable<Alumno>{
     private String nombreCompleto;
     private String dni;
     private Integer nroDeVotos;
@@ -40,6 +40,11 @@ public class Alumno {
     @Override
     public String toString() {
         return "\n" + nombreCompleto + "--" + dni + "-- Votos: "+nroDeVotos;
+    }
+
+    @Override
+    public int compareTo(Alumno o) {
+        return o.nroDeVotos.compareTo(this.nroDeVotos);
     }
     
      
